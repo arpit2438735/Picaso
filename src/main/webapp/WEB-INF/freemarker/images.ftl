@@ -21,9 +21,10 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
+        <#list images?key as prop>
+        ${prop}=${images.get(prop)
+        <img src="static/albums/${prop}">
+        </#list>
+        </body>
         
-<a href="static/albums/${image1}.jpg"><img src="static/albums/${image1}.jpg"></a>
-<a href="static/albums/${image2}.jpg"><img src="static/albums/${image2}.jpg"></a>
-<a href="static/albums/${image3}.jpg"><img src="static/albums/${image3}.jpg"</a>
-</body>
 </html>

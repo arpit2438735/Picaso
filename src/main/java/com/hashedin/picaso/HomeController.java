@@ -4,12 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author somit
+ * @author Arpit
  *
  */
 @Controller
@@ -22,10 +21,12 @@ public class HomeController {
 		model.put("id", "1");
 		return new ModelAndView("home", model);
 	}
-	@RequestMapping(value="{id}")
+	@RequestMapping(value="/albums/{id}")
 	public ModelAndView Photos(String id){
 		Map<String,Object> newmodel=new HashMap<String,Object>();
+		Fetchdata fetchdata=new Fetchdata();
 		
+		newmodel.put("fetchdata",fetchdata.getalbums());
 		return new ModelAndView("images",newmodel);
 	}
 
